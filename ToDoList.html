@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #text1{
+                width : 300px;
+                height : 30px;
+            }
+            button{
+                width: 100px;
+                height: 30px;
+            }
+            button.bEdit{
+                margin-left: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="text1" type="text" value="">
+        <button id="add1" onclick="add()">ADD</button></body></br></br>
+        <div id="div1">
+
+        </div>
+    </body>
+    <script>
+        let text = document.getElementById('text1');
+        let div1 = document.getElementById('div1');
+        var count = 1;
+        function add(){
+            let cB = document.createElement('INPUT');
+            cB.setAttribute("type","checkbox");
+            cB.setAttribute("name","c1");
+            cB.setAttribute("id","l"+count)
+            let l1 = document.createElement("label");
+            l1.innerHTML = text.value;
+            l1.setAttribute("for","l"+count);
+            let br = document.createElement('br');
+            let br2 = document.createElement('br');
+            let b1 = document.createElement('button');
+            b1.setAttribute("class","bEdit");
+            b1.setAttribute("onclick","edit(this)")
+            b1.innerHTML = 'EDIT';
+
+            div1.appendChild(cB);
+            div1.appendChild(l1);
+            div1.appendChild(b1);
+            div1.appendChild(br);
+            div1.appendChild(br2);
+            count++;
+        }
+        function edit(ref){
+            ref.style.display = "none";
+            let save = document.createElement('button');
+            let delete1 = document.createElement('button');
+
+
+        }
+    </script>
+</html>

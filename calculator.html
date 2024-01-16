@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task Practice</title>
+    </head>
+    <style>
+        button{
+            width: 50px;
+            height: 50px;
+        }
+        button:hover{
+            background-color:aqua;
+            color:white;
+        }
+    </style>
+    <body>
+        <input id="text1" type="text" name="number" value="" disabled style="width: 205px;height:50px"><br><br>
+        <button id="b1" onclick="show(this)">1</button>
+        <button id="b2" onclick="show(this)">2</button>
+        <button id="b3" onclick="show(this)">3</button>
+        <button id="b+" onclick="show(this)">+</button><br>
+        <button id="b4" onclick="show(this)">4</button>
+        <button id="b5" onclick="show(this)">5</button>
+        <button id="b6" onclick="show(this)">6</button>
+        <button id="b-" onclick="show(this)">-</button><br>
+        <button id="b7" onclick="show(this)">7</button>
+        <button id="b8" onclick="show(this)">8</button>
+        <button id="b9" onclick="show(this)">9</button>
+        <button id="b/" onclick="show(this)">/</button><br>
+        <button id="b0" onclick="show(this)">0</button>
+        <button id="b." onclick="show(this)">.</button>
+        <button id="b=" onclick="show(this)">=</button>
+        <button id="bX" onclick="show(this)">X</button>
+        
+    </body>
+    <script>
+        let text = document.getElementById('text1');
+        var value1 = "";
+        var value2 = "";
+        var result = "";
+        var opr = "";
+        function show(ref){
+            switch(ref.id){
+                case 'b1':
+                    text.disabled = false;
+                    text.value += 1;
+                    text.disabled = true;
+                    break;
+                case 'b2':
+                    text.disabled = false;
+                    text.value += 2;
+                    text.disabled = true;
+                    break;
+                case 'b3':
+                    text.disabled = false;
+                    text.value += 3;
+                    text.disabled = true;
+                    break;
+                case 'b4':
+                    text.disabled = false;
+                    text.value += 4;
+                    text.disabled = true;
+                    break;
+                case 'b5':
+                    text.disabled = false;
+                    text.value += 5;
+                    text.disabled = true;
+                    break;
+                case 'b6':
+                    text.disabled = false;
+                    text.value += 6;
+                    text.disabled = true;
+                    break;
+                case 'b7':
+                    text.disabled = false;
+                    text.value += 7;
+                    text.disabled = true;
+                    break;
+                case 'b8':
+                    text.disabled = false;
+                    text.value += 8;
+                    text.disabled = true;
+                    break;
+                case 'b9':
+                    text.disabled = false;
+                    text.value += 9;
+                    text.disabled = true;
+                    break;
+                case 'b.':
+                    text.disabled = false;
+                    text.value += '.';
+                    text.disabled = true;
+                    break;
+                case 'b0':
+                    text.disabled = false;
+                    text.value += 0;
+                    text.disabled = true;
+                    break;
+                case 'b+':
+                    if(opr === '')
+                    value1 = parseFloat(text.value);
+                    opr = '+';
+                    text.disabled = false;
+                    text.value = '';
+                    text.disabled = true;
+                    break;
+                case 'b-':
+                    if(opr === '')
+                    value1 = parseFloat(text.value);
+                    opr = '-';
+                    text.disabled = false;
+                    text.value = '';
+                    text.disabled = true;
+                    break;
+                case 'b/':
+                    if(opr === '')
+                    value1 = parseFloat(text.value);
+                    opr = '/';
+                    text.disabled = false;
+                    text.value = '';
+                    text.disabled = true;
+                    break;
+                case 'bX':
+                    if(opr === '')
+                    value1 = parseFloat(text.value);
+                    opr = '*';
+                    text.disabled = false;
+                    text.value = '';
+                    text.disabled = true;
+                    break;
+                case 'b=':
+                    value2 = parseFloat(text.value);
+                    if(opr == '+'){
+                        result = value1 + value2;
+                    }
+                    else if(opr == '-'){
+                        result = value1 - value2;
+                    }
+                    else if(opr == '/'){
+                        result = value1 / value2;
+                    }
+                    else if(opr == '*'){
+                        result = value1 * value2;
+                    }
+                    text.value = result;
+                    break;
+            }
+        }
+    </script>
+</html>

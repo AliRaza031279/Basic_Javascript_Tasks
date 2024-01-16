@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            //alert(localStorage.getItem('bgColor'));
+            var bgColor;
+            if(localStorage.getItem('bgColor') != null) {
+                bgColor = localStorage.getItem('bgColor');
+                document.body.style.backgroundColor = bgColor;
+            }
+        });
+
+        function changeBackgroundColor(btn) {
+            document.body.style.backgroundColor = btn.value;
+            localStorage.setItem('bgColor', btn.value);
+        }// end function
+
+        function showListValue(list) {
+            if(list.value != "Select any option")
+                alert(list.value);
+        }//showListValue
+
+    </script>
+
+</head>
+<body>
+    <h3>Choose the Background Color</h3>
+    <input type="button" value="Red" onclick="changeBackgroundColor(this)"> <br><br>
+    <input type="button" value="Green" onclick="changeBackgroundColor(this)"> <br><br>
+    <input type="button" value="Blue" onclick="changeBackgroundColor(this)"> <br><br>
+
+    <select onchange="showListValue(this)">
+        <option>Select any option</option>
+        <option value="opt1">Option 1</option>
+        <option value="opt2">Option 2</option>
+        <option value="opt3">Option 3</option>
+    </select>
+
+</body>
+</html>

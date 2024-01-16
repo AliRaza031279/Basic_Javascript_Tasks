@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <select onchange="change(this)">
+            <option>select any option</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            
+        </select>
+    </body>
+    <script>
+        window.addEventListener('DOMContentLoaded',func);
+        function func(){
+            if(localStorage.getItem('bgColor') != null){
+                let v = localStorage.getItem('bgColor');
+                document.body.style.backgroundColor = v;
+            }
+        }
+        function change(ref){
+            document.body.style.backgroundColor = ref.value;
+            localStorage.setItem("bgColor",ref.value);
+        }
+    </script>
+</html>
